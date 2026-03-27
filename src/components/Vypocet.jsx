@@ -7,21 +7,33 @@ export default function Vysledek() {
   const [nahodnyVtip, setNahodnyVtip] = useState("");
 
   useEffect(() => {
+<<<<<<< HEAD
     // Po načtení komponenty stáhne JSON soubor s vtipy
     fetch("/vtipy.json")
       .then((response) => response.json())
       .then((vtipyData) => {
         // Po načtení vybere náhodný vtip
+=======
+    fetch("/vtipy.json")
+      .then((response) => response.json())
+      .then((vtipyData) => {
+>>>>>>> 2af2eb81d6bcd89e9364693a5e4d6a2b125ae2d4
         if (vtipyData && vtipyData.length > 0) {
           const randomIdx = Math.floor(Math.random() * vtipyData.length);
           setNahodnyVtip(vtipyData[randomIdx].text);
         }
       })
+<<<<<<< HEAD
       // Zachytí chybu při načítání souboru
       .catch((error) => console.error("Chyba při načítání vtipů:", error));
   }, []);
 
   // Pokud nejsou k dispozici data z kalkulačky
+=======
+      .catch((error) => console.error("Chyba při načítání vtipů:", error));
+  }, []);
+
+>>>>>>> 2af2eb81d6bcd89e9364693a5e4d6a2b125ae2d4
   if (!data) {
     return (
       <div className="container">
@@ -62,7 +74,11 @@ export default function Vysledek() {
 
   return (
     <div className="container">
+<<<<<<< HEAD
       <h1>Výsledek výpočtu</h1>
+=======
+      <h1>📊 Výsledek výpočtu</h1>
+>>>>>>> 2af2eb81d6bcd89e9364693a5e4d6a2b125ae2d4
 
       {nahodnyVtip && (
         <div className="drink-card" style={{ borderLeft: "4px solid #8f5cff", background: "rgba(143,92,255,0.1)" }}>
